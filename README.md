@@ -1,3 +1,8 @@
+#How to run the project:
+
+* npm i
+* npm start
+
 # Shopify
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
