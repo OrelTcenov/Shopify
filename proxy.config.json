@@ -1,0 +1,7 @@
+{
+  "*": {
+    "target": "https://yael-story.myshopify.com",
+    "changeOrigin": true,
+    "secure": false
+  }
+}

@@ -1,0 +1,41 @@
+<div>
+  <h2 style="text-align: center">Orders</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Order Number</th>
+        <th scope="col">Date</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="orders">
+      <tr
+        *ngFor="
+          let order of orders | slice: (page - 1) * pageSize:page * pageSize
+        "
+        (click)="lineItems(order)"
+        class="rowTable"
+      >
+        <td>
+          {{ order.order_number }}
+        </td>
+        <td>
+          {{ order.created_at | date: "dd/MM/yyyy" }}
+        </td>
+        <td>{{ order.customer.first_name }} {{ order.customer.last_name }}</td>
+        <td>
+          {{ order.total_price }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [maxSize]="5"
+    [boundaryLinks]="true"
+    [pageSize]="pageSize"
+    class="d-flex justify-content-center"
+  ></ngb-pagination>
+</div>

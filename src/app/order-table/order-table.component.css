@@ -1,0 +1,4 @@
+.rowTable:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
